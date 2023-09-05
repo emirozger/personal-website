@@ -1,0 +1,223 @@
+body {
+  background-color: rgb(242, 242, 247);
+
+}
+
+
+
+.dark-mode {
+  background-color: #1d1d1d;
+
+}
+
+.dark-mode #Hello {
+  
+  color: #ffffff !important;
+}
+
+.dark-mode #Name {
+  
+  font-weight: bold;
+  color: #dbdada !important;
+}
+
+.dark-mode #Developer {
+  
+  font-weight: lighter;
+  color: #dbdada !important;
+}
+
+
+.dark-mode .lead {
+  
+  color: #b3b3b3 !important;
+
+}
+
+.dark-mode .nav-link {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+
+
+
+.dark-mode-toggle {
+  position: fixed;
+  top: 3%;
+  right: 3%;
+}
+
+@media screen and (max-width: 1000px) {
+  .dark-mode-toggle {
+    position: fixed;
+    top: 3%;
+    right: -1%;
+    transform: scale(0.70);
+  }
+}
+
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #c3c3c3;
+  -webkit-transition: .5s;
+  transition: .7s;
+  
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked+.slider {
+  background-color: #303030;
+}
+
+input:focus+.slider {
+  box-shadow: 1px 1px 10px rgb(170, 178, 19);
+}
+
+input:checked+.slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.nav-link {
+  color: rgb(170, 178, 19) !important;
+
+
+}
+
+.nav-link.active {
+  color: rgb(255, 255, 255) !important;
+}
+
+.nav-link {
+  color: red;
+  text-decoration: none;
+  margin: 10px 10px;
+  font-size: 25px;
+}
+
+
+
+#Hello {
+  font-size: 45px;
+
+}
+
+#Name {
+  font-size: 70px;
+  font-weight: bold;
+}
+
+p.lead {
+  font-size: 35px;
+  color: rgb(170, 178, 19)
+}
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes onTop {
+  0% {
+    top: -35px;
+  }
+
+  100% {
+    top: 0px;
+  }
+}
+@keyframes onLeft{
+  0%{
+    bottom : -500px;
+  }
+  100%{
+    bottom: 0px;
+  }
+}
+#About {
+  position: relative;
+  top: -100px;
+  animation: onTop 2s ease-in-out forwards, fadeIn 1s ease-in;
+}
+
+#Projects {
+  position: relative;
+  top: -100px;
+  animation: onTop 2s ease-in-out forwards, fadeIn 1.5s ease-in;
+  
+}
+
+#Contact {
+  position: relative;
+  top: -100px;
+  animation: onTop 2s ease-in-out forwards, fadeIn 2s ease-in;
+}
+
+#Resume {
+  position: relative;
+  top: -100px;
+  animation: onTop 2s ease-in-out forwards, fadeIn 2.5s ease-in;
+}
+
+#Hello {
+  animation: fadeIn 1s ease;
+
+}
+
+#Name {
+  animation: fadeIn 1.5s ease-in;
+
+}
+
+#Developer {
+  text-align: left;
+  font-size: 25px;
+  animation: fadeIn 2s ease-in;
+  
+}
+
+p.lead {
+  position: relative;
+  font-size: 22px;
+  animation: fadeIn 2s ease-in,onLeft 2s ease-in-out forwards;
+}
+img {
+  animation: fadeIn 1.5s ease-in;
+}
