@@ -3,6 +3,8 @@ body {
 
 }
 
+@keyframes backgroundAnimaton {}
+
 a,
 a:hover a:visited a:active {
   color: black;
@@ -22,13 +24,26 @@ a:hover a:visited a:active {
 
 }
 
+.bod {
+  text-align: center;
+
+  margin-top: 50px;
+}
+
+.dark-mode .bod {
+  color: rgb(241, 241, 241);
+}
+.dark-mode .container{
+  color:rgb(241, 241, 241);
+}
 .dark-mode #linkedInButtonText {
-  
+
   color: rgb(215, 211, 211);
 
 }
+
 .dark-mode #githubButtonText {
-  
+
   color: rgb(215, 211, 211);
 
 }
@@ -41,6 +56,7 @@ a:hover a:visited a:active {
 #linkedInButton {
   animation: fadeIn2 3s ease;
 }
+
 @keyframes slideIn {
   0% {
     transform: translateY(500px);
