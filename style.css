@@ -1,10 +1,6 @@
 body {
-  background-color: rgb(242, 242, 247);
-
+  background-color: #e9e9e9;
 }
-
-@keyframes backgroundAnimaton {}
-
 a,
 a:hover a:visited a:active {
   color: black;
@@ -23,19 +19,26 @@ a:hover a:visited a:active {
   justify-content: center;
 
 }
+.dark-mode {
+  transition: background-color 0.5s ease;
+}
+.light-mode{
+  transition: background-color 0.5s ease;
+}
 
 .bod {
   text-align: center;
-
   margin-top: 50px;
 }
 
 .dark-mode .bod {
   color: rgb(241, 241, 241);
 }
-.dark-mode .container{
-  color:rgb(241, 241, 241);
+
+.dark-mode .container {
+  color: rgb(241, 241, 241);
 }
+
 .dark-mode #linkedInButtonText {
 
   color: rgb(215, 211, 211);
@@ -185,10 +188,32 @@ input:checked+.slider:before {
   transform: translateX(26px);
 }
 
+#Projects a.nav-link {
+  color: #494b46 !important;
+}
+
+#Contact a.nav-link {
+  color: #494b46 !important;
+}
+
+#Resume a.nav-link {
+  color: #494b46 !important;
+}
+
+#AboutMeC a.nav-link,#ProjectsC a.nav-link,#ResumeC a.nav-link,#AboutMeR a.nav-link,#ProjectsR a.nav-link,#ContactR a.nav-link{
+  color: #494b46 !important;
+}
+.dark-mode #AboutMeC a.nav-link,.dark-mode #ProjectsC a.nav-link,.dark-mode #ResumeC a.nav-link,.dark-mode #AboutMeR a.nav-link,.dark-mode #ProjectsR a.nav-link,.dark-mode #ContactR a.nav-link{
+  color: rgb(234, 234, 234) !important;
+}
+#Contact a.nav-link,#Projects a.nav-link,#Resume a.nav-link{
+  color: #494b46 !important;
+}
+.dark-mode #Contact a.nav-link,.dark-mode #Projects a.nav-link,.dark-mode #Resume a.nav-link{
+  color: rgb(234, 234, 234) !important;
+}
 .nav-link {
-  color: rgb(170, 178, 19) !important;
-
-
+  color: rgb(234, 234, 234) !important;
 }
 
 .nav-link.active {
@@ -196,13 +221,10 @@ input:checked+.slider:before {
 }
 
 .nav-link {
-  color: red;
   text-decoration: none;
   margin: 10px 10px;
   font-size: 25px;
 }
-
-
 
 #Hello {
   font-size: 45px;
@@ -216,7 +238,7 @@ input:checked+.slider:before {
 
 p.lead {
   font-size: 35px;
-  color: rgb(170, 178, 19)
+  color: rgb(95, 92, 92)
 }
 
 @keyframes fadeIn2 {
@@ -278,29 +300,32 @@ p.lead {
 }
 
 .rounded-5:hover {
-  animation: scaleAnimation 0.3s ease-in-out;
+  animation: scaleAnimation .5s ease-in-out;
+  opacity: 0.8;
+  
 }
 
-#About {
+#About,#AboutMeC,#AboutMeR {
   position: relative;
   top: -100px;
   animation: onTop 2s ease-in-out forwards, fadeIn 1s ease-in;
 }
 
-#Projects {
+#Projects,#ProjectsC,#ProjectsR {
+
   position: relative;
   top: -100px;
   animation: onTop 2s ease-in-out forwards, fadeIn 1.5s ease-in;
 
 }
 
-#Contact {
+#Contact,#ContactC,#ContactR {
   position: relative;
   top: -100px;
   animation: onTop 2s ease-in-out forwards, fadeIn 2s ease-in;
 }
 
-#Resume {
+#Resume,#ResumeC,#ResumeR {
   position: relative;
   top: -100px;
   animation: onTop 2s ease-in-out forwards, fadeIn 2.5s ease-in;
@@ -308,19 +333,17 @@ p.lead {
 
 #Hello {
   animation: fadeIn 1s ease;
-
 }
 
 #Name {
   animation: fadeIn 1.5s ease-in;
-
+  text-align: left;
 }
 
 #Developer {
   text-align: left;
   font-size: 25px;
   animation: fadeIn 2s ease-in;
-
 }
 
 p.lead {
@@ -328,3 +351,10 @@ p.lead {
   font-size: 22px;
   animation: fadeIn 2s ease-in, onLeft 2s ease-in-out forwards;
 }
+
+.nav-link:hover {
+transform: scale(1.1);
+}
+
+
+
