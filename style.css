@@ -1,6 +1,7 @@
 body {
   background-color: #e9e9e9;
 }
+
 a,
 a:hover a:visited a:active {
   color: black;
@@ -19,10 +20,12 @@ a:hover a:visited a:active {
   justify-content: center;
 
 }
+
 .dark-mode {
   transition: background-color 0.5s ease;
 }
-.light-mode{
+
+.light-mode {
   transition: background-color 0.5s ease;
 }
 
@@ -117,23 +120,42 @@ a:hover a:visited a:active {
   color: rgba(255, 255, 255, 0.75) !important;
 }
 
-
-
-
 .dark-mode-toggle {
   position: fixed;
   top: 3%;
   right: 3%;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 768px) {
   .dark-mode-toggle {
-    position: fixed;
-    top: 3%;
-    right: -1%;
-    transform: scale(0.70);
+    position: relative;
+    top: 225px;
+    left: 125px;
+    transform: scale(.8);
   }
 }
+
+@media (max-width: 768px) {
+
+  #Resume,
+  #ResumeC,
+  #ResumeR {
+    margin-left: 40px;
+  }
+
+  #About,
+  #Projects,
+  #Contact,
+  #AboutMeC,
+  #ContactC,
+  #ProjectsC,
+  #AboutMeR,
+  #ProjectsR,
+  #ContactR {
+    margin-left: 20px;
+  }
+}
+
 
 
 .switch {
@@ -200,18 +222,36 @@ input:checked+.slider:before {
   color: #494b46 !important;
 }
 
-#AboutMeC a.nav-link,#ProjectsC a.nav-link,#ResumeC a.nav-link,#AboutMeR a.nav-link,#ProjectsR a.nav-link,#ContactR a.nav-link{
+#AboutMeC a.nav-link,
+#ProjectsC a.nav-link,
+#ResumeC a.nav-link,
+#AboutMeR a.nav-link,
+#ProjectsR a.nav-link,
+#ContactR a.nav-link {
   color: #494b46 !important;
 }
-.dark-mode #AboutMeC a.nav-link,.dark-mode #ProjectsC a.nav-link,.dark-mode #ResumeC a.nav-link,.dark-mode #AboutMeR a.nav-link,.dark-mode #ProjectsR a.nav-link,.dark-mode #ContactR a.nav-link{
+
+.dark-mode #AboutMeC a.nav-link,
+.dark-mode #ProjectsC a.nav-link,
+.dark-mode #ResumeC a.nav-link,
+.dark-mode #AboutMeR a.nav-link,
+.dark-mode #ProjectsR a.nav-link,
+.dark-mode #ContactR a.nav-link {
   color: rgb(234, 234, 234) !important;
 }
-#Contact a.nav-link,#Projects a.nav-link,#Resume a.nav-link{
+
+#Contact a.nav-link,
+#Projects a.nav-link,
+#Resume a.nav-link {
   color: #494b46 !important;
 }
-.dark-mode #Contact a.nav-link,.dark-mode #Projects a.nav-link,.dark-mode #Resume a.nav-link{
+
+.dark-mode #Contact a.nav-link,
+.dark-mode #Projects a.nav-link,
+.dark-mode #Resume a.nav-link {
   color: rgb(234, 234, 234) !important;
 }
+
 .nav-link {
   color: rgb(234, 234, 234) !important;
 }
@@ -302,16 +342,20 @@ p.lead {
 .rounded-5:hover {
   animation: scaleAnimation .5s ease-in-out;
   opacity: 0.8;
-  
+
 }
 
-#About,#AboutMeC,#AboutMeR {
+#About,
+#AboutMeC,
+#AboutMeR {
   position: relative;
   top: -100px;
   animation: onTop 2s ease-in-out forwards, fadeIn 1s ease-in;
 }
 
-#Projects,#ProjectsC,#ProjectsR {
+#Projects,
+#ProjectsC,
+#ProjectsR {
 
   position: relative;
   top: -100px;
@@ -319,13 +363,17 @@ p.lead {
 
 }
 
-#Contact,#ContactC,#ContactR {
+#Contact,
+#ContactC,
+#ContactR {
   position: relative;
   top: -100px;
   animation: onTop 2s ease-in-out forwards, fadeIn 2s ease-in;
 }
 
-#Resume,#ResumeC,#ResumeR {
+#Resume,
+#ResumeC,
+#ResumeR {
   position: relative;
   top: -100px;
   animation: onTop 2s ease-in-out forwards, fadeIn 2.5s ease-in;
@@ -353,8 +401,5 @@ p.lead {
 }
 
 .nav-link:hover {
-transform: scale(1.1);
+  transform: scale(1.1);
 }
-
-
-
