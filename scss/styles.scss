@@ -1,0 +1,22 @@
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+header {
+    background-color: $primary-color;
+    color: white;
+}
+
+.card {
+    transition: transform 0.3s;
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+footer {
+    background-color: $secondary-color;
+}

@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emir Özger - Game Developer Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --primary-color: #67619b;
+            --bg-color: #0F0E17;
+            --text-color: #FFFFFE;
+            --secondary-color: #FF8906;
+            --accent-color: #E53170;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        .navbar {
+            background-color: rgba(15, 14, 23, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    padding: 0 15px;
+}
+@media (max-width: 768px)
+ {
+    #buttons{
+        margin: auto;
+    }
+    #imemir {
+       margin: auto;
+     
+    }
+    .hero 
+    {
+        height: auto;
+    }
+    .profile-image{
+        margin-top: 50px;
+        margin-bottom: 125px;
+        
+    }
+  
+    .contact-form input, .contact-form textarea 
+    {
+        width: 100%;     
+       
+    }
+    .contact-form button {
+        width: 100%;
+       
+    }
+    .navbar {
+    position: relative;
+    }
+    .btn-custom {
+    display: block;
+    width: 100%; 
+    text-align: center; 
+    margin: 10px 0; 
+  }
+ 
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero .lead {
+    font-size: 1.5rem;
+}
+
+
+.profile-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px var(--secondary-color);
+}
+
+
+        .btn-custom {
+            background-color: var(--secondary-color);
+            color: var(--bg-color);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            padding: 10px 20px;
+        }
+
+        .btn-custom:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 137, 6, 0.2);
+        }
+
+        .project-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(108, 92, 231, 0.2);
+        }
+
+        .project-card img {
+            transition: all 0.3s ease;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .about-section {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+        }
+
+        .skill-item {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            border-radius: 20px;
+            padding: 5px 15px;
+            margin: 5px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(108, 92, 231, 0.2);
+        }
+
+        .contact-form input, .contact-form textarea {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: var(--text-color);
+            padding: 15px;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .contact-form button {
+            background-color: var(--secondary-color);
+            color: var(--bg-color);
+            border: none;
+            padding: 15px;
+            cursor: pointer;
+            font-weight: 600;
+            width: 100%;
+        
+        }
+
+        .contact-form button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 137, 6, 0.2);
+        }
+
+        .social-icons a {
+            color: var(--text-color);
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .profile-image {
+            width: 400px;
+            height: 400px;
+            border-radius: 10%;
+            object-fit: cover;
+            border: 5px solid var(--secondary-color);
+            transition: all 0.3s ease;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px var(--secondary-color);
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .fade-in.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+       
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Emir Özger</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h1 id="imemir" class="mb-4 fade-in">Hi, I'm Emir</h1>
+                    <h2 class="display-8 mb-4 fade-in">Game Developer</h2>
+                    <p class="lead mb-4 fade-in">
+                    Passionate game developer with over 3 years of experience in Unity and C#, dedicated to creating innovative and engaging experiences for both mobile and PC platforms.</p>
+                    <a href="#contact" class="btn btn-custom btn-lg fade-out">Contact Me!</a>
+                    <a href="EmirhanOzger_Resume.pdf" class="btn btn-custom btn-lg fade-out" download="EmirhanOzger_Resume">Resume</a>
+                    <a href="https://github.com/emirozger" class="btn btn-custom btn-lg fade-out" target="_blank">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="https://linkedin.com/in/emirozger" class="btn btn-custom btn-lg fade-out" target="_blank">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                </div>
+                <div class="col-md-6 text-center">
+                    <img src="emirjpg (1).jpg" alt="Emir Özger" class="img-fluid profile-image float-animation">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="projects" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 fade-in">Featured Projects(Hover Cursor for show)</h2>
+            <ul class="nav nav-tabs mb-4" id="projectTabs">
+                <li class="nav-item">
+                    <a class="nav-link active" id="mobile-tab" data-bs-toggle="tab" href="#mobile">Mobile Games</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="pc-tab" data-bs-toggle="tab" href="#pc">PC Games</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="shader-tab" data-bs-toggle="tab" href="#shader">VFX / Shader</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="qa-tab" data-bs-toggle="tab" href="#qa">QA</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="mobile">
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <div class="project-card fade-in">
+                                <video src="projects/Mobile/ship-park-master.mp4" alt="Mobile Project 1" muted></video>
+                                <div class="p-4">
+                                    <h3>Ship Park Master</h3>
+                                    <p>An increasingly difficult level based game that reaches the goal with drawing mechanics.</p>
+                                    <a href="https://github.com/emirozger/ship-park-master" class="btn btn-custom">View on GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="project-card fade-in">
+                                <video src="projects/Mobile/Punch&Rise-Power.mp4" alt="Mobile Project 1" muted></video>
+                                <div class="p-4">
+                                    <h3>Punch&Rise Power</h3>
+                                    <p>A turn-based game with artificial intelligence, progressing through levels where we defeat the enemy using punchs.</p>
+                                    <a href="" class="btn btn-custom">View on GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="project-card fade-in">
+                                <video src="projects/Mobile/force-fruit-merge.mp4" alt="Mobile Project 1" muted></video>
+                                <div class="p-4">
+                                    <h3>Force Cube Merge</h3>
+                                    <p>A merger game where we throw cubes with a sliding mechanic and if two cubes are the same and touch each other, the score increases..</p>
+                                    <a href="https://github.com/emirozger/force-fruit-merge" class="btn btn-custom">View on GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="project-card fade-in">
+                                <video src="projects/Mobile/wordle-with-cheat.mp4" alt="Mobile Project 1" muted></video>
+                                <div class="p-4">
+                                    <h3>Wordle with Cheat</h3>
+                                    <p>A clone of the classic wordle word game with integrated cheating system.</p>
+                                    <a href="https://github.com/emirozger/wordle-unity" class="btn btn-custom">View on GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="project-card fade-in">
+                                <video src="projects/Mobile/finger-chooser.mov" alt="Mobile Project 1" muted></video>
+                                <div class="p-4">
+                                    <h3>Finger Chooser</h3>
+                                    <p>The project of choosing one of the system after pressing fingers when you can't decide on something with your friends.</p>
+                                    <a href="https://github.com/emirozger/finger-chooser" class="btn btn-custom">View on GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="project-card fade-in">
+                                <video src="projects/Mobile/fill-the-fridge.mp4" alt="Mobile Project 1" muted></video>
+                                <div class="p-4">
+                                    <h3>Fill The Fridge</h3>
+                                    <p>A game where we open the fridge and place objects in the fridge in order to relax.</p>
+                                    <a href="" class="btn btn-custom">View on GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="project-card fade-in">
+                                <video src="projects/Mobile/ball-stack.mp4" alt="Mobile Project 1" muted></video>
+                                <div class="p-4">
+                                    <h3>Ball Stack</h3>
+                                    <p>A game in which balls are stacked by touching each other and continuously moving forward and overcoming obstacles.</p>
+                                    <a href="#" class="btn btn-custom">View on GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="project-card fade-in">
+                                <video src="projects/Mobile/doodle-jump.mp4" alt="Mobile Project 1" muted></video>
+                                <div class="p-4">
+                                    <h3>Doodle Jump</h3>
+                                    <p>It's a clone of the doodle jump game I loved playing as a child.</p>
+                                    <a href="#" class="btn btn-custom">View on GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="project-card fade-in">
+                                <img src="projects/Mobile/zigzag.jpg" alt="Mobile Project 1" ></img>
+                                <div class="p-4">
+                                    <h3>Zigzag</h3>
+                                    <p>It's a clone of the zigzag game.</p>
+                                    <a href="https://github.com/emirozger/zigzag-unity" class="btn btn-custom">View on GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="project-card fade-in">
+                                <video src="projects/Mobile/Stack.mp4" alt="Mobile Project 1" muted></video>
+                                <div class="p-4">
+                                    <h3>Stack</h3>
+                                    <p>It's a clone of the stack game with some improves.</p>
+                                    <a href="#" class="btn btn-custom">View on GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                                                                                                                                                
+                       
+                        </div>
+                   
+                </div>
+                <div class="tab-pane fade" id="pc">
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <div class="project-card fade-in">
+                                <video src="projects/PC/BIMO!.mp4" alt="PC Project 1" muted></video>
+                                <div class="p-4">
+                                    <h3>BIMO!</h3>                  
+                                    <p>Google Game and Application Academy gamejam 1st place project.
+                                        Complete and win sacred gems by solving puzzles and traversing tracks!
+                                    </p>
+                                    <a href="https://github.com/emirozger/BIMO-unity" class="btn btn-custom">View on GitHub</a>
+                                    <a href=" https://www.youtube.com/watch?v=EZh1WjSms3k&list=LL&index=88" class="btn btn-custom">View Full Trailer</a>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="project-card fade-in">
+                                <video src="projects/PC/InterIsland.mp4" alt="PC Project 2" muted></video>
+                                <div class="p-4">
+                                    <h3>InterIsland</h3>
+                                    <p>Final project in game design department.
+                                        A simulation game where we buy fruits, vegetables, etc. cheaply between islands and sell them expensive to other islands.</p>
+                                    <a href="https://github.com/emirozger/Interisland-unity" class="btn btn-custom">View On Github</a>
+                                    <a href="https://emirozger.itch.io/interisland" class="btn btn-custom">Play on Itchio</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="project-card fade-in">
+                                <video src="projects/PC/LUMINEX.mp4" alt="PC Project 3" muted></video>
+                                <div class="p-4">
+                                    <h3>LUMINEX</h3>
+                                    <p>Google Game and Application Academy Bootcamp project.
+                                        First Person Shooter game with plenty of movement mechanics with wave system.</p>
+                                    <a href="https://github.com/emirozger/OUA-Bootcamp-U77" class="btn btn-custom">View on GitHub</a>
+                                    <a href="https://www.youtube.com/watch?v=0cdz3ZzbpcQ" class="btn btn-custom">View Full Trailer</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="project-card fade-in">
+                                <img src="projects/PC/reverbs2mind.png" alt="PC Project 4"></img>
+                                <div class="p-4">
+                                    <h3>Reverbs 2 Mind</h3>
+                                    <p>Global Game Jam Game. Puzzle and horror themed.</p>                     
+                                    <a href="https://erchin.itch.io/reverb2mind" class="btn btn-custom">Play on Itchio</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="project-card fade-in">
+                                <video src="projects/PC/building-system.mp4" alt="PC Project 5" muted></video>
+                                <div class="p-4">
+                                    <h3>Building System</h3>
+                                    <p>A system where we can build and expand items and objects like in the Sims game.</p>
+                                    <a href="https://github.com/emirozger/building-system-unity" class="btn btn-custom">View on GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="project-card fade-in">
+                                <video src="projects/PC/PizzaPit.mp4" alt="PC Project 6" muted></video>
+                                <div class="p-4">
+                                    <h3>Pizza Pit</h3>
+                                    <p>A pizza shop business simulation game and a flexible, evolving shop purchasing system.</p>
+                                    <a href="https://github.com/emirozger/PizzaPit" class="btn btn-custom">View on GitHub</a>
+                                    <a href="https://zootou.itch.io/pizzapit" class="btn btn-custom">Play on Itchio</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="project-card fade-in">
+                                <video src="projects/PC/PursitOfEternity.mp4" alt="PC Project 7" muted></video>
+                                <div class="p-4">
+                                    <h3>Pursuit Of Eternity</h3>
+                                    <p>It is a puzzle & platform game that includes mechanics such as turret, platform movements, interaction with physical objects.</p>
+                                    <a href="https://github.com/emirozger/pursuit-of-eternity" class="btn btn-custom">View on GitHub</a>
+                                    <a href="https://zootou.itch.io/pursuitofeternity" class="btn btn-custom">Play on Itchio</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="project-card fade-in">
+                                <img src="projects/PC/wtftheroom.png" alt="PC Project 11" muted></img>
+                                <div class="p-4">
+                                    <h3>WTF!? : The Room</h3>
+                                    <p>WTF!? : The Room is a 3D first-person puzzle game with rooms where objects change on first touch.</p>
+                                    <a href="https://github.com/emirozger/WTF-The-Room" class="btn btn-custom">View on GitHub</a>
+                                    <a href="https://emirozger.itch.io/wtf-the-room" class="btn btn-custom">Play on Itchio</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 mb-4">
+                            <div class="project-card fade-in">
+                                <img src="projects/PC/dont-touch-me.png" alt="PC Project 8" ></img>
+                                <div class="p-4">
+                                    <h3>Don't Touch Me!</h3>
+                                    <p>A two-player GGJ game where you have to help each other cross platforms and levels in a certain time.</p>
+                                    <a href="https://github.com/emirozger/dont-touch-me" class="btn btn-custom">View on GitHub</a>
+                                    <a href="https://emirozger.itch.io/dont-touch-me" class="btn btn-custom">Play on Itchio</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="project-card fade-in">
+                                <video src="projects/PC/avatar-clothing-customization-system.mp4" alt="PC Project 9" muted></video>
+                                <div class="p-4">
+                                    <h3>Clothing Customization System</h3>
+                                    <p>A simulation where we can experience the store clothes, which have a flexible, developable structure, in 3D on the avatar.</p>
+                                    <a href="https://github.com/emirozger/clothing-customization-system" class="btn btn-custom">View on GitHub</a>                       
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="project-card fade-in">
+                                <video src="projects/PC/login-system.mp4" alt="PC Project 10" muted></video>
+                                <div class="p-4">
+                                    <h3>Login System</h3>
+                                    <p>A simple system that allows you to log in to the system using e-mail and password.</p>
+                                    <a href="https://github.com/emirozger/login-screen-unity" class="btn btn-custom">View on GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                      
+                        </div>
+                </div>
+                <div class="tab-pane fade" id="shader">
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <div class="project-card fade-in">
+                                <video src="projects/Shader Development/1.mp4" alt="Shader Project 1" muted></video>
+                                <div class="p-4">
+                                    <h3>Simple Fire System</h3>
+                                    <a href="#" class="btn btn-custom">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="project-card fade-in">
+                                <video src="projects/Shader Development/2.mp4" alt="Shader Project 2" muted></video>
+                                <div class="p-4">
+                                    <h3>Flowing water shader for mobile games.</h3>      
+                                    <a href="#" class="btn btn-custom">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="project-card fade-in">
+                                <video src="projects/Shader Development/3.mp4" alt="Shader Project 3" muted></video>
+                                <div class="p-4">
+                                    <h3>Shader used in the transitions of planetary and round objects.</h3>
+                                  
+                                    <a href="#" class="btn btn-custom">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="project-card fade-in">
+                                <video src="projects/Shader Development/4.mp4" alt="Shader Project 4" muted></video>
+                                <div class="p-4">
+                                    <h3>Simple invisible wall shader.</h3>
+                                  
+                                    <a href="#" class="btn btn-custom">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="project-card fade-in">
+                                <video src="projects/Shader Development/5.mp4" alt="Shader Project 5"  muted></video>
+                                <div class="p-4">
+                                    <h3>Simple cartoon water shader.</h3>
+                                  
+                                    <a href="#" class="btn btn-custom">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="project-card fade-in">
+                                <video src="projects/Shader Development/6.mp4" alt="Shader Project 6" muted></video>
+                                <div class="p-4">
+                                    <h3>Simple cartoon smoke effect.
+                                    </h3>
+                                  
+                                    <a href="#" class="btn btn-custom">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="project-card fade-in">
+                                <video src="projects/Shader Development/7.mp4" alt="Shader Project 7" muted></video>
+                                <div class="p-4">
+                                    <h3>Simple cartoon lightning effect.</h3>
+                                    <a href="#" class="btn btn-custom">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="qa">
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <div class="project-card fade-in">
+                                <img src="projects/QA/onnect.jpeg" alt="QA Project 1" ></img>
+                                <div class="p-4">
+                                    <h3>Onnect Game Manuel QA</h3>
+                                    <a href="projects/QA/Rollic - QA Intern Case Study - Emirhan Özger.xlsx" class="btn btn-custom btn-lg fade-out" download="Onnect QA">Download QA Project</a>
+                                    <a href="https://play.google.com/store/apps/details/Onnect_Pair_Matching_Puzzle?id=com.gamebility.onet&hl=tr" class="btn btn-custom btn-lg fade-out">Store Link</a>
+                                </div>
+                            </div>
+                        </div>        
+                        <div class="col-md-4 mb-4">
+                            <div class="project-card fade-in">
+                                <img src="projects/QA/njoyworld.png" alt="QA Project 1" ></img>
+                                <div class="p-4">
+                                    <h3>njoyWorld: Kids Learning</h3>
+                                    <a href="projects/QA/njoyKidz - QA Intern Case Study - Emirhan Özger.pdf" class="btn btn-custom btn-lg fade-out pad" download="njoyWorld QA Report">Download QA Project</a>
+                                    <a href="https://play.google.com/store/apps/details?id=com.njoyKidz.njoyWorld&hl=tr" class="btn btn-custom btn-lg fade-out">Store Link</a>
+                                </div>
+                            </div>
+                        </div>        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="about-section">
+                <h2 class="mb-4 fade-in">About Me</h2>
+                <p class="fade-in">
+
+                    I am passionate about pushing the boundaries of interactive entertainment, combining technical expertise with creative vision to deliver high-quality gaming experiences. My approach is grounded in collaboration, ensuring that each project benefits from diverse perspectives and achieves its full potential. I thrive on solving complex challenges and am always eager to explore new tools and methodologies to enhance gameplay and visual storytelling.                </p>
+                <div class="skills mt-4 fade-out">
+                    <h3 class="mb-3">Skills</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Unity Engine</span>
+                        <span class="skill-item">C#</span>
+                        <span class="skill-item">DOTween</span>
+                        <span class="skill-item">QA Testing</span>
+                        <span class="skill-item">Game Design</span>
+                        <span class="skill-item">Optimization</span>
+                        <span class="skill-item">Git & Github</span>
+                        <span class="skill-item">Unity Gaming Services</span>
+                        <span class="skill-item">Firebase</span>
+                        <span class="skill-item">Project Management</span>
+                        <span class="skill-item">Shader Graph</span>
+                        <span class="skill-item">MS Office</span>
+                        <span class="skill-item">Canva</span>
+                        <span class="skill-item">Figma</span>
+                        <span class="skill-item">Jira</span>
+                        <span class="skill-item">Notion</span>
+                        <span class="skill-item">Miro</span>
+                        <span class="skill-item">HTML5</span>
+                        <span class="skill-item">CSS3</span>
+                        <span class="skill-item">SQL</span> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4 fade-in">Get in Touch</h2>
+            <form class="contact-form fade-in">
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="email"id="email" placeholder="Your Email" required>
+                <textarea rows="5" id="message" placeholder="Your Message" required></textarea>
+                <button type="submit" onclick="SendMail()" class="btn btn-custom fade-out">Send Message</button>
+
+            </form>
+        </div>
+    </section>
+
+    <footer class="py-4 text-center">
+        <p>&copy; 2024 Emir Özger. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="https://linkedin.com/in/emirozger" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/emirozger" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="jquery-1.6.1.js"></script>
+    <script src="my_jquery.js"></script>
+    <script>
+        
+function SendMail() {
+    let params ={
+        from_name : document.getElementById("name").value,
+        email : document.getElementById("email").value,
+        message : document.getElementById("message").value,
+    }
+    emailjs.send('service_ns0dixl', 'template_snfd16q', params).then(alert("Mail sent successfully!"));
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("message").value = "";
+}
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Add active class to fade-in elements when they are scrolled into view
+            const fadeInElements = document.querySelectorAll('.fade-in');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            });
+
+            fadeInElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+
+<script src = script.js></script>
+
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "zq1dO7YcU6i0kysSX",
+      });
+   })();
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+        const mobile = document.querySelectorAll('#mobile video');
+        const shader = document.querySelectorAll('#shader video');
+        const pc = document.querySelectorAll('#pc video');
+
+        shader.forEach(video => {
+            video.addEventListener('mouseover', () => {
+                video.play();
+            });
+        });
+        mobile.forEach(video => {
+            video.addEventListener('mouseover', () => {
+                video.play();
+            });
+        });
+        pc.forEach(video => {
+            video.addEventListener('mouseover', () => {
+                video.play();
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
+
